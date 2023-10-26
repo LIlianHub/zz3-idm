@@ -17,25 +17,51 @@ int main(){
     init_main();
 
     struct ObjetGraphique *og1 = LeMetaObjetGraphique.ConstructeurDefautObjetGraphique();
+    printf("\n");
     struct Cercle *c1 = LeMetaCercle.ConstructeurDefaultCercle();
+    printf("\n");
     struct Rectangle *r1 = LeMetaRectangle.ConstructeurDefaultRectangle();
-    struct Rectangle *r2 = LeMetaRectangle.ConstructeurRectangle1(100, 100);
+    printf("\n");
+    struct Rectangle *r2 = LeMetaRectangle.ConstructeurRectangle1(100, 200);
+    printf("\n");
 
     printf("X : %d\n", og1->myClass->getX(og1));
+    printf("Y : %d\n", og1->myClass->getY(og1));
+    printf("Centre X : %d\n", og1->myClass->getCentreX(og1));
+    printf("Centre Y : %d\n", og1->myClass->getCentreY(og1));
+
+    printf("\n");
 
     c1->myClass->setRayon(5, c1);
     printf("Rayon du cercle : %d\n", c1->myClass->getRayon(c1));
-    printf("X : %d\n", c1->myClass->superMetaClass->getX(og1));
+    printf("X : %d\n", c1->myClass->superMetaClass->getX(&(c1->superClass)));
+    printf("Y : %d\n", c1->myClass->superMetaClass->getY(&(c1->superClass)));
+    printf("Centre X : %d\n", c1->myClass->superMetaClass->getCentreX(&(c1->superClass)));
+    printf("Centre Y : %d\n", c1->myClass->superMetaClass->getCentreY(&(c1->superClass)));
+    c1->myClass->superMetaClass->afficher(&(c1->superClass));
+    c1->myClass->superMetaClass->effacer(&(c1->superClass));
+    c1->myClass->superMetaClass->deplacer(&(c1->superClass));
+    printf("\n");
 
     r1->myClass->setLargeur(10, r1);
     r1->myClass->setHauteur(20, r1);
     printf("Largeur du rectangle : %d\n", r1->myClass->getLargeur(r1));
     printf("Hauteur du rectangle : %d\n", r1->myClass->getHauteur(r1));
-    printf("X : %d\n", r1->myClass->superMetaClass->getX(og1));
+    printf("X : %d\n", r1->myClass->superMetaClass->getX(&(r1->superClass)));
+    printf("Y : %d\n", r1->myClass->superMetaClass->getY(&(r1->superClass)));
+    printf("Centre X : %d\n", r1->myClass->superMetaClass->getCentreX(&(r1->superClass)));
+    printf("Centre Y : %d\n", r1->myClass->superMetaClass->getCentreY(&(r1->superClass)));
+    r1->myClass->superMetaClass->afficher(&(r1->superClass));
+    r1->myClass->superMetaClass->effacer(&(r1->superClass));
+    r1->myClass->superMetaClass->deplacer(&(r1->superClass));
+    printf("\n");
 
     printf("Largeur du rectangle : %d\n", r2->myClass->getLargeur(r2));
     printf("Hauteur du rectangle : %d\n", r2->myClass->getHauteur(r2));
+    printf("\n");
     
     printf("NbObjetGraphique : %d\n", LeMetaObjetGraphique.GetNbObjetGraphique());
+    printf("\n");
+
     return 0;
 }

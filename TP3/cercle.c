@@ -16,6 +16,24 @@ void setRayon(int inRayon, struct Cercle *this)
    this->rayon = inRayon;
 }
 
+/* Implémentation des méthodes de surcharges */
+
+void afficherCercle(struct ObjetGraphique *this){
+   struct Cercle * c = (struct Cercle *)this;
+   printf("Cercle de rayon %d\n", c->rayon);
+}
+
+void effacerCercle(struct ObjetGraphique *this){
+   struct Cercle * c = (struct Cercle *)this;
+   printf("Effacer Cercle de rayon %d\n", c->rayon);
+}
+
+void deplacerCercle(struct ObjetGraphique *this){
+   struct Cercle * c = (struct Cercle *)this;
+   printf("Deplacer Cercle de rayon %d\n", c->rayon);
+}
+
+
 /* Implémentation du constructeur, il sera pointé par la métaclass*/
 struct Cercle *ConstructeurDefaultCercle()
 {
@@ -25,6 +43,8 @@ struct Cercle *ConstructeurDefaultCercle()
    this->rayon = 1;
    this->myClass = &LeMetaCercle;
    this->superClass = *(this->myClass->superMetaClass->ConstructeurDefautObjetGraphique());
+
+   this->superClass.type = CERCLE;
 
    return this;
 }

@@ -17,7 +17,14 @@ void setHauteur(int hauteur, struct Rectangle *this);
 struct Rectangle *ConstructeurDefaultRectangle();
 struct Rectangle *ConstructeurRectangle1(int largeur, int hauteur);
 
+/* Implémentaion des méthodes surchargés dans rectangle.c */
 
+void afficherRectangle(struct ObjetGraphique *this);
+void effacerRectangle(struct ObjetGraphique *this);
+void deplacerRectangle(struct ObjetGraphique *this);
+
+int getCentreXRectangle(struct ObjetGraphique *this);
+int getCentreYRectangle(struct ObjetGraphique *this);
 
 /* Définition des classes */
 

@@ -14,6 +14,12 @@ int getRayon(struct Cercle *this);
 void setRayon(int rayon, struct Cercle *this);
 struct Cercle *ConstructeurDefaultCercle();
 
+/* Implémentaion des méthodes surchargés dans cercle.c */
+
+void afficherCercle(struct ObjetGraphique *this);
+void effacerCercle(struct ObjetGraphique *this);
+void deplacerCercle(struct ObjetGraphique *this);
+
 
 /* Définition des classes */
 
