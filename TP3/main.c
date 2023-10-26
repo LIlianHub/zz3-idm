@@ -5,6 +5,8 @@
 #include "rectangle.h"
 #include "init_main.h"
 
+// gcc -o exec *.c
+
 /* Recuperation des instances des métaclass présente dans init_main.c*/
 
 extern struct MetaObjetGraphique LeMetaObjetGraphique;
