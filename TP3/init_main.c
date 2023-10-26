@@ -8,6 +8,26 @@ struct MetaRectangle LeMetaRectangle;
 
 /* Setup des Metaclass */
 
+void initMetaObjetGraphiquePolymorphisme(){
+    LeMetaObjetGraphique.TVMafficher[OG] = NULL;
+    LeMetaObjetGraphique.TVMeffacer[OG] = NULL;
+    LeMetaObjetGraphique.TVMdeplacer[OG] = NULL;
+    LeMetaObjetGraphique.TVMgetCentreX[OG] = getCentreXOG;
+    LeMetaObjetGraphique.TVMgetCentreY[OG] = getCentreYOG;
+
+    LeMetaObjetGraphique.TVMafficher[RECTANGLE] = afficherRectangle;
+    LeMetaObjetGraphique.TVMeffacer[RECTANGLE] = effacerRectangle;
+    LeMetaObjetGraphique.TVMdeplacer[RECTANGLE] = deplacerRectangle;
+    LeMetaObjetGraphique.TVMgetCentreX[RECTANGLE] = getCentreXRectangle;
+    LeMetaObjetGraphique.TVMgetCentreY[RECTANGLE] = getCentreYRectangle;
+
+    LeMetaObjetGraphique.TVMafficher[CERCLE] = afficherCercle;
+    LeMetaObjetGraphique.TVMeffacer[CERCLE] = effacerCercle;
+    LeMetaObjetGraphique.TVMdeplacer[CERCLE] = deplacerCercle;
+    LeMetaObjetGraphique.TVMgetCentreX[CERCLE] = LeMetaObjetGraphique.TVMgetCentreX[OG];
+    LeMetaObjetGraphique.TVMgetCentreY[CERCLE] = LeMetaObjetGraphique.TVMgetCentreY[OG];
+}
+
 void initMetaObjetGraphique(){
     LeMetaObjetGraphique.ConstructeurDefautObjetGraphique = ConstructeurDefaultObjetGraphique;
     LeMetaObjetGraphique.GetNbObjetGraphique = GetNbObjetGraphique;
@@ -16,6 +36,12 @@ void initMetaObjetGraphique(){
     LeMetaObjetGraphique.getY = getY;
     LeMetaObjetGraphique.setX = setX;
     LeMetaObjetGraphique.setY = setY;
+    LeMetaObjetGraphique.afficher = afficher;
+    LeMetaObjetGraphique.effacer = effacer;
+    LeMetaObjetGraphique.deplacer = deplacer;
+    LeMetaObjetGraphique.getCentreX = getCentreX;
+    LeMetaObjetGraphique.getCentreY = getCentreY;
+    initMetaObjetGraphiquePolymorphisme();
 }
 
 void initMetaCercle(){
