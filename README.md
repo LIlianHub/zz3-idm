@@ -8,4 +8,4 @@ TP de IDM de 3ème année de l'ISIMA INP
 
 - [x] [TP1]
 - [x] [TP2]
-- [ ] [TP3]
+- [x] [TP3]
