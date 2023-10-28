@@ -5,7 +5,7 @@
 #include "rectangle.h"
 #include "init_main.h"
 
-// gcc -o exec *.c
+// gcc -o exec *.c -g -Wall -Wextra
 
 /* Recuperation des instances des métaclass présente dans init_main.c*/
 
@@ -64,6 +64,11 @@ int main(){
     
     printf("NbObjetGraphique : %d\n", LeMetaObjetGraphique.GetNbObjetGraphique());
     printf("\n");
+
+    og1->myClass->liberer(og1);
+    c1->superClass.myClass->liberer(&(c1->superClass));
+    r1->superClass.myClass->liberer(&(r1->superClass));
+    r2->superClass.myClass->liberer(&(r2->superClass));
 
     return 0;
 }

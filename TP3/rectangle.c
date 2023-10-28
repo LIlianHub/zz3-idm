@@ -58,6 +58,11 @@ int getCentreYRectangle(struct ObjetGraphique *this)
     return r->superClass.y + r->hauteur / 2;
 }
 
+void libererRectangle(struct ObjetGraphique *this){
+   struct Rectangle * r = (struct Rectangle *)this;
+   free(&(r->superClass));
+}
+
 /* Implémentation du constructeur, il sera pointé par la métaclass*/
 struct Rectangle *ConstructeurDefaultRectangle()
 {

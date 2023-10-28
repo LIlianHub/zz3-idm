@@ -18,6 +18,7 @@ int GetNbObjetGraphique(void);
 struct ObjetGraphique *ConstructeurDefaultObjetGraphique();
 int getCentreXOG(struct ObjetGraphique *this);
 int getCentreYOG(struct ObjetGraphique *this);
+void libererOG(struct ObjetGraphique *this);
 
 /* Implémentation des méthodes à surcharger ou non dans objet_graphique.c */
 void afficher(struct ObjetGraphique *this);
@@ -25,6 +26,7 @@ void effacer(struct ObjetGraphique *this);
 void deplacer(struct ObjetGraphique *this);
 int getCentreX(struct ObjetGraphique *this);
 int getCentreY(struct ObjetGraphique *this);
+void liberer(struct ObjetGraphique *this);
 
 /* Définition des classes */
 
@@ -42,6 +44,7 @@ struct MetaObjetGraphique
    void (*TVMdeplacer[NBCLASSES])(struct ObjetGraphique *);
    int (*TVMgetCentreX[NBCLASSES])(struct ObjetGraphique *);
    int (*TVMgetCentreY[NBCLASSES])(struct ObjetGraphique *);
+   void (*TVMliberer[NBCLASSES])(struct ObjetGraphique *);
 
    /* Méthodes à surcharger ou non */
    void (*effacer)(struct ObjetGraphique *);
@@ -49,6 +52,7 @@ struct MetaObjetGraphique
    void (*deplacer)(struct ObjetGraphique *);
    int (*getCentreX)(struct ObjetGraphique *);
    int (*getCentreY)(struct ObjetGraphique *);
+   void (*liberer)(struct ObjetGraphique *);
 
    /* attributs de classe statique */
    int NbObjetGraphique;

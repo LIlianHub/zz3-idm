@@ -14,18 +14,22 @@ void initMetaObjetGraphiquePolymorphisme(){
     LeMetaObjetGraphique.TVMdeplacer[OG] = NULL;
     LeMetaObjetGraphique.TVMgetCentreX[OG] = getCentreXOG;
     LeMetaObjetGraphique.TVMgetCentreY[OG] = getCentreYOG;
+    LeMetaObjetGraphique.TVMliberer[OG] = libererOG;
 
     LeMetaObjetGraphique.TVMafficher[RECTANGLE] = afficherRectangle;
     LeMetaObjetGraphique.TVMeffacer[RECTANGLE] = effacerRectangle;
     LeMetaObjetGraphique.TVMdeplacer[RECTANGLE] = deplacerRectangle;
     LeMetaObjetGraphique.TVMgetCentreX[RECTANGLE] = getCentreXRectangle;
     LeMetaObjetGraphique.TVMgetCentreY[RECTANGLE] = getCentreYRectangle;
+    LeMetaObjetGraphique.TVMliberer[RECTANGLE] = libererRectangle;
 
     LeMetaObjetGraphique.TVMafficher[CERCLE] = afficherCercle;
     LeMetaObjetGraphique.TVMeffacer[CERCLE] = effacerCercle;
     LeMetaObjetGraphique.TVMdeplacer[CERCLE] = deplacerCercle;
     LeMetaObjetGraphique.TVMgetCentreX[CERCLE] = LeMetaObjetGraphique.TVMgetCentreX[OG];
     LeMetaObjetGraphique.TVMgetCentreY[CERCLE] = LeMetaObjetGraphique.TVMgetCentreY[OG];
+    LeMetaObjetGraphique.TVMliberer[CERCLE] = libererCercle;
+    
 }
 
 void initMetaObjetGraphique(){
@@ -41,6 +45,7 @@ void initMetaObjetGraphique(){
     LeMetaObjetGraphique.deplacer = deplacer;
     LeMetaObjetGraphique.getCentreX = getCentreX;
     LeMetaObjetGraphique.getCentreY = getCentreY;
+    LeMetaObjetGraphique.liberer = liberer;
     initMetaObjetGraphiquePolymorphisme();
 }
 

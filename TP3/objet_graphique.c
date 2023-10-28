@@ -52,6 +52,11 @@ int getCentreY(struct ObjetGraphique* this)
    return this->myClass->TVMgetCentreY[this->type](this); 
 }
 
+void liberer(struct ObjetGraphique* this) 
+{ 
+   return this->myClass->TVMliberer[this->type](this); 
+}
+
 /* Implementation des methodes pour OG */
 
 int getCentreXOG(struct ObjetGraphique *this){
@@ -60,6 +65,10 @@ int getCentreXOG(struct ObjetGraphique *this){
 
 int getCentreYOG(struct ObjetGraphique *this){
    return this->y;
+}
+
+void libererOG(struct ObjetGraphique *this){
+   free(this);
 }
 
 /* Implémentation du constructeur, il sera pointé par la métaclass*/

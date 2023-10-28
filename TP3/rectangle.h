@@ -26,6 +26,8 @@ void deplacerRectangle(struct ObjetGraphique *this);
 int getCentreXRectangle(struct ObjetGraphique *this);
 int getCentreYRectangle(struct ObjetGraphique *this);
 
+void libererRectangle(struct ObjetGraphique *this);
+
 /* Définition des classes */
 
 struct MetaRectangle

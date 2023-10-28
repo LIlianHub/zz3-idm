@@ -19,6 +19,7 @@ struct Cercle *ConstructeurDefaultCercle();
 void afficherCercle(struct ObjetGraphique *this);
 void effacerCercle(struct ObjetGraphique *this);
 void deplacerCercle(struct ObjetGraphique *this);
+void libererCercle(struct ObjetGraphique *this);
 
 
 /* Définition des classes */

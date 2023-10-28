@@ -33,6 +33,11 @@ void deplacerCercle(struct ObjetGraphique *this){
    printf("Deplacer Cercle de rayon %d\n", c->rayon);
 }
 
+void libererCercle(struct ObjetGraphique *this){
+   struct Cercle * c = (struct Cercle *)this;
+   free(&(c->superClass));
+}
+
 
 /* Implémentation du constructeur, il sera pointé par la métaclass*/
 struct Cercle *ConstructeurDefaultCercle()
